@@ -1,0 +1,14 @@
+/* SHRIYANSH AI CHATBOT CSS Phase 1 */
+#chatbot{position:fixed;right:28px;bottom:28px;z-index:9999;}#chatToggle{width:72px;height:72px;border-radius:50%;background:#ff2d2d;color:#fff;border:none;cursor:pointer;}#chatWindow{position:absolute;right:0;bottom:92px;width:390px;height:560px;background:#111;color:#fff;border:1px
+solid
+#ff2d2d;border-radius:24px;opacity:0;visibility:hidden;transition:.35s;}#chatbot.open
+#chatWindow{opacity:1;visibility:visible;}
+.chat-header{display:flex;justify-content:space-between;padding:18px;border-bottom:1px
+solid
+#ff2d2d}.quick-buttons{display:flex;flex-wrap:wrap;gap:8px;padding:12px}.quick-buttons
+button{background:#181818;color:#fff;border:1px solid
+#ff2d2d;border-radius:999px;padding:8px
+14px}.chat-input{display:flex;padding:16px;gap:10px}.chat-input
+input{flex:1;background:#111;color:#fff;border:1px solid
+#ff2d2d;border-radius:12px;padding:12px}.chat-input
+button{background:#ff2d2d;color:#fff;border:none;border-radius:12px;width:52px}

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+
+<body>
+
+<!-- PAGE 1: TERMINAL LOADER -->
+<section class="boot-screen" id="bootScreen">
+  <div class="scanlines"></div>
+
+  <div class="boot-terminal">
+    <div class="terminal-top">
+      <span></span><span></span><span></span>
+      <p>SHRIYANSH-PORTFOLIO.exe</p>
+    </div>
+
+    <pre id="bootText"></pre>
+
+    <div class="boot-progress">
+      <div id="bootBar"></div>
+    </div>
+
+    <p class="enter-text" id="enterText">Press ENTER or Click to Continue</p>
+  </div>
+</section>
+
+<!-- PAGE 2: CINEMATIC PORTFOLIO -->
+<main class="portfolio-scene" id="portfolioScene">
+
+  <div class="cursor-light"></div>
+  <div class="grid-bg"></div>
+  <div class="red-orb orb-one"></div>
+  <div class="red-orb orb-two"></div>
+
+  <nav class="navbar">
+    <div class="logo">SHRIYANSH<span>.</span></div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu-btn" id="menuBtn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <section class="hero-hud">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-content">
+      <p class="status-line">
+        <span></span> SYSTEM ONLINE / DEVELOPER MODE
+      </p>
+
+      <h1>
+        I BUILD
+        <span>DIGITAL</span>
+        EXPERIENCES
+      </h1>
+
+      <p class="hero-desc">
+        Hi, I’m <b>Shriyansh Sharma</b>, a Java & Full Stack Developer.
+        I create premium web apps using Java, Node.js, Express, MongoDB,
+        EJS, HTML, CSS and JavaScript.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="cyber-btn">
+          View Projects <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <a href="#contact" class="cyber-btn outline">
+          Contact Me
+        </a>
+      </div>
+
+      <!-- KEYBOARD SKILLS -->
+      <div class="keyboard-panel" id="skills">
+        <div class="keyboard-title">
+          <p>DEVELOPER KEYBOARD</p>
+          <span>Hover / Click any skill key</span>
+        </div>
+
+        <div class="keyboard">
+          <div class="key esc">ESC<span>Debug</span></div>
+          <div class="key num">01</div>
+          <div class="key num">02</div>
+          <div class="key num">03</div>
+          <div class="key num">04</div>
+          <div class="key back">BACK</div>
+
+          <div class="key skill">
+            <i class="fa-brands fa-java"></i>
+            <span>Java</span>
+          </div>
+
+          <div class="key skill green">
+            <i class="fa-brands fa-node-js"></i>
+            <span>Node</span>
+          </div>
+
+          <div class="key skill cyan">
+            <b>EX</b>
+            <span>Express</span>
+          </div>
+
+          <div class="key skill leaf">
+            <i class="fa-solid fa-leaf"></i>
+            <span>MongoDB</span>
+          </div>
+
+          <div class="key skill yellow">
+            <i class="fa-brands fa-js"></i>
+            <span>JS</span>
+          </div>
+
+          <div class="key enter">ENTER<span>Build</span></div>
+
+          <div class="key tab">TAB</div>
+
+          <div class="key skill orange">
+            <i class="fa-brands fa-html5"></i>
+            <span>HTML</span>
+          </div>
+
+          <div class="key skill blue">
+            <i class="fa-brands fa-css3-alt"></i>
+            <span>CSS</span>
+          </div>
+
+          <div class="key skill red">
+            <i class="fa-brands fa-git-alt"></i>
+            <span>Git</span>
+          </div>
+
+          <div class="key skill white">
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+          </div>
+
+          <div class="key skill cyan">
+            <i class="fa-solid fa-database"></i>
+            <span>MySQL</span>
+          </div>
+
+          <div class="key shift">SHIFT</div>
+
+          <div class="key ctrl">CTRL</div>
+          <div class="key alt">ALT</div>
+          <div class="key space">Always Learning</div>
+          <div class="key alt">ALT</div>
+          <div class="key ctrl">CTRL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="profile-zone">
+      <div class="system-info">
+        <span><i class="fa-solid fa-circle-check"></i> BUILD SUCCESS</span>
+        <span><i class="fa-solid fa-shield-halved"></i> SECURE</span>
+      </div>
+
+      <div class="profile-orbit">
+        <div class="orbit-ring ring-one"></div>
+        <div class="orbit-ring ring-two"></div>
+        <div class="orbit-ring ring-three"></div>
+
+        <div class="profile-card">
+          <img src="/images/profile/profile.png.jpeg" alt="Shriyansh Profile" />
+        </div>
+
+        <div class="floating-badge badge-one">JAVA</div>
+        <div class="floating-badge badge-two">NODE</div>
+        <div class="floating-badge badge-three">EJS</div>
+      </div>
+
+      <div class="identity-card">
+        <h2>SHRIYANSH SHARMA<span>.</span></h2>
+        <p>JAVA & FULL STACK DEVELOPER</p>
+
+        <div class="mini-info">
+          <span><i class="fa-solid fa-location-dot"></i> India</span>
+          <span><i class="fa-solid fa-bolt"></i> Available</span>
+        </div>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/shriyansh-sharma-2083363a0?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/shriyansh1624"><i class="fa-brands fa-github"></i></a>
+          <a href="mailto:en23cs301996@medicaps.ac.in">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="/resume/Shriyansh_Sharma_Premium_Resume (1).pdf"><i class="fa-solid fa-download"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="about-section" id="about">
+  <p class="section-mini">ABOUT ME</p>
+  <h2 class="section-heading">Who I Am</h2>
+
+  <div class="about-grid">
+    <div class="glass-card">
+      <h3>Developer Mindset</h3>
+      <p>I am Shriyansh Sharma, a Java & Full Stack Developer who loves building modern web applications with clean UI and strong backend logic.</p>
+    </div>
+
+    <div class="glass-card">
+      <h3>Education</h3>
+      <p>Computer Science Engineering student, focused on Java, DSA, Web Development and real-world projects.</p>
+    </div>
+
+    <div class="glass-card">
+      <h3>Goal</h3>
+      <p>To become a strong software developer and build scalable products that solve real problems.</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects-section" id="projects">
+  <p class="section-mini">PROJECTS</p>
+  <h2 class="section-heading">Featured Builds</h2>
+
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Gyan Jyoti School Website</h3>
+      <p>Dynamic school website with admin dashboard, admission forms, enquiry forms and MongoDB database.</p>
+      <span>Node • Express • EJS • MongoDB</span>
+      <div class="project-links">
+
+    <a href="https://github.com/shriyansh1624/gyan-jyoti-school-website.git"
+       target="_blank"
+       class="github-btn">
+
+        <i class="fa-brands fa-github"></i>
+        Source Code
+
+    </a>
+
+    <a href="https://gyanjyoti.onrender.com"
+       target="_blank"
+       class="demo-btn">
+
+        🚀 Live Demo
+
+    </a>
+
+</div>
+    </div>
+
+    <div class="project-card">
+      <h3>UniLift</h3>
+      <p>School-purpose ride sharing app inspired by Rapido with MERN stack structure.</p>
+      <span>MERN • JavaScript • MongoDB</span>
+      <div class="project-links">
+
+    <a href="https://github.com/shriyansh1624/unilift"
+       target="_blank"
+       class="github-btn">
+
+        <i class="fa-brands fa-github"></i>
+        Source Code
+
+    </a>
+
+    <a href="https://unilift.vercel.app"
+       target="_blank"
+       class="demo-btn">
+
+        🚀 Live Demo
+
+    </a>
+
+</div>
+    </div>
+  
+  
+    <div class="project-card">
+      <h3>BankEase</h3>
+      <p>Bank-at-doorstep concept project focused on user convenience and banking services.</p>
+      <span>Java • Hibernate • Struts</span>
+       <!-- =========================
+        BANKEASE
+========================= -->
+
+<div class="project-links">
+
+    <a href="https://github.com/shriyansh1624/javaWebprojects.git"
+       target="_blank"
+       class="github-btn">
+
+        <i class="fa-brands fa-github"></i>
+        Source Code
+
+    </a>
+
+    <a href="https://bankease.vercel.app"
+       target="_blank"
+       class="demo-btn">
+
+        🚀 Live Demo
+
+    </a>
+
+</div>
+    </div>
+  
+
+    <div class="project-card">
+      <h3>EcoRide</h3>
+      <p>Java-based project focused on transport and eco-friendly ride management.</p>
+      <span>Java • MySQL</span>
+       <!-- =========================
+        ECORIDE
+========================= -->
+
+<div class="project-links">
+
+    <a href="https://github.com/shriyansh1624/ecoride"
+       target="_blank"
+       class="github-btn">
+
+        <i class="fa-brands fa-github"></i>
+        Source Code
+
+    </a>
+
+    <a href="https://ecoride.vercel.app"
+       target="_blank"
+       class="demo-btn">
+
+        🚀 Live Demo
+
+    </a>
+
+</div>
+     
+    </div>
+  </div>
+
+</section>
+
+<div class="social-hub">
+
+    <p class="social-title">
+        CONNECT WITH ME
+    </p>
+
+    <div class="social-grid">
+
+        <a href="https://github.com/shriyansh1624" target="_blank" class="social-box github">
+            <i class="fa-brands fa-github"></i>
+
+            <div>
+                <h4>GitHub</h4>
+                <span>Explore My Code</span>
+            </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/shriyansh-sharma-2083363a0?utm_source=share_via&utm_content=profile&utm_medium=member_android target="_blank" class="social-box linkedin">
+            <i class="fa-brands fa-linkedin-in"></i>
+
+            <div>
+                <h4>LinkedIn</h4>
+                <span>Professional Network</span>
+            </div>
+        </a>
+
+        <a href="https://instagram.com/_shriiiyanshh_" target="_blank" class="social-box instagram">
+            <i class="fa-brands fa-instagram"></i>
+
+            <div>
+                <h4>Instagram</h4>
+                <span>Developer Journey</span>
+            </div>
+        </a>
+
+        <a href="https://wa.me/918878892701" target="_blank" class="social-box whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+
+            <div>
+                <h4>WhatsApp</h4>
+                <span>Quick Connect</span>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+<section class="resume-section" id="resume">
+  <div class="resume-card">
+    <p class="section-mini">RESUME</p>
+    <h2>Want to know more?</h2>
+    <p>Download my resume and explore my skills, projects and experience.</p>
+    <a href="resume/Shriyansh_Sharma_Premium_Resume (1).pdf" class="cyber-btn" download>Download Resume</a>
+  </div>
+</section>
+<section class="flow-section" id="experience">
+  <p class="section-mini">EXPERIENCE</p>
+  <h2 class="section-heading">Developer Journey</h2>
+
+  <div class="flow-track">
+    <div class="flow-card">
+      <span>01</span>
+      <h3>Technosofts Internship</h3>
+      <p>Worked on real web development tasks and improved practical development skills.</p>
+    </div>
+
+    <div class="flow-card">
+      <span>02</span>
+      <h3>School Website</h3>
+      <p>Built dynamic website with admin dashboard, forms, MongoDB and Express backend.</p>
+    </div>
+
+    <div class="flow-card">
+      <span>03</span>
+      <h3>Full Stack Practice</h3>
+      <p>Practicing Java, DSA, Node.js, Express, MongoDB and clean UI design.</p>
+    </div>
+  </div>
+</section>
+
+<section class="flow-section" id="achievements">
+  <p class="section-mini">ACHIEVEMENTS</p>
+  <h2 class="section-heading">Unlocked Badges</h2>
+
+  <div class="badge-arena">
+    <div class="achievement-badge">🏏<h3>Cricket</h3><p>Division Level</p></div>
+    <div class="achievement-badge">⚽<h3>Football</h3><p>District Level</p></div>
+    <div class="achievement-badge">🎯<h3>Career Catalyst</h3><p>College Event</p></div>
+    <div class="achievement-badge">💻<h3>Projects</h3><p>Real Builds</p></div>
+  </div>
+</section>
+
+<section class="gamer-contact" id="contact">
+
+  <!-- LEFT CONTENT -->
+  <div class="contact-left">
+    <p class="section-mini">CONTACT</p>
+
+    <h2>Ready To Build?</h2>
+
+    <p>
+      Have an exciting project, internship opportunity or creative idea?
+      Send me a message and let’s build something powerful, clean and futuristic.
+    </p>
+
+    <div class="contact-status">
+      <span></span>
+      Developer Online
+    </div>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <form
+    class="gamer-form"
+    id="contactForm"
+    action="/contact"
+    method="POST"
+    novalidate
+  >
+
+    <!-- Honeypot Spam Protection -->
+    <div class="honeypot-field" aria-hidden="true">
+      <label for="website">Website</label>
+
+      <input
+        type="text"
+        id="website"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+      >
+    </div>
+
+    <!-- Name -->
+    <div class="input-box">
+      <input
+        type="text"
+        id="contactName"
+        name="name"
+        placeholder=" "
+        minlength="2"
+        maxlength="50"
+        autocomplete="name"
+        required
+      >
+
+      <label for="contactName">Your Name</label>
+      <small class="field-error"></small>
+    </div>
+
+    <!-- Email -->
+    <div class="input-box">
+      <input
+        type="email"
+        id="contactEmail"
+        name="email"
+        placeholder=" "
+        maxlength="120"
+        autocomplete="email"
+        required
+      >
+
+      <label for="contactEmail">Your Email</label>
+      <small class="field-error"></small>
+    </div>
+
+    <!-- Phone -->
+    <div class="input-box">
+      <input
+        type="tel"
+        id="contactPhone"
+        name="phone"
+        placeholder=" "
+        maxlength="15"
+        inputmode="tel"
+        autocomplete="tel"
+      >
+
+      <label for="contactPhone">Your Phone No.</label>
+      <small class="field-error"></small>
+    </div>
+
+    <!-- Subject -->
+    <div class="input-box">
+      <input
+        type="text"
+        id="contactSubject"
+        name="subject"
+        placeholder=" "
+        minlength="3"
+        maxlength="100"
+        autocomplete="off"
+      >
+
+      <label for="contactSubject">Subject</label>
+      <small class="field-error"></small>
+    </div>
+
+    <!-- Message -->
+    <div class="input-box message-box">
+      <textarea
+        id="contactMessage"
+        name="message"
+        placeholder=" "
+        minlength="10"
+        maxlength="1000"
+        required
+      ></textarea>
+
+      <label for="contactMessage">Your Message</label>
+      <small class="field-error"></small>
+
+      <span class="character-counter">
+        <b id="messageCount">0</b>/1000
+      </span>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="contactSubmitBtn">
+      <span>SEND MESSAGE</span>
+      <i class="fa-solid fa-paper-plane"></i>
+    </button>
+
+    <!-- Server Response -->
+    <div
+      class="form-response"
+      id="formResponse"
+      role="status"
+      aria-live="polite"
+    ></div>
+
+  </form>
+ <!-- =================================
+     CONTACT SUCCESS TERMINAL
+================================== -->
+
+<div class="transmission-overlay" id="transmissionOverlay">
+  <div class="transmission-scanlines"></div>
+
+  <div class="transmission-terminal">
+    <div class="transmission-header">
+      <div class="terminal-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <p>SECURE-MESSAGE-TRANSMISSION.exe</p>
+
+      <button
+        type="button"
+        class="terminal-close"
+        id="terminalClose"
+        aria-label="Close transmission window"
+      >
+        ×
+      </button>
+    </div>
+
+    <div class="transmission-body">
+      <pre id="transmissionText"></pre>
+
+      <div class="transmission-progress">
+        <div id="transmissionBar"></div>
+      </div>
+
+      <div class="transmission-percentage">
+        <span id="transmissionPercent">0%</span>
+      </div>
+
+      <div class="transmission-success" id="transmissionSuccess">
+        <div class="success-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h3>MESSAGE DELIVERED</h3>
+
+        <p>
+          Your transmission has been received successfully.
+          I will connect with you soon.
+        </p>
+
+        <button type="button" id="terminalDoneBtn">
+          RETURN TO PORTFOLIO
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<footer class="cyber-footer">
+  <div class="footer-glow"></div>
+
+  <div class="footer-brand">
+    <h2>SHRIYANSH<span>.</span></h2>
+    <p>Building clean code, powerful systems and futuristic web experiences.</p>
+  </div>
+
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/shriyansh-sharma-2083363a0?utm_source=share_via&utm_content=profile&utm_medium=member_android target=" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://github.com/shriyansh1624" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href="https://instagram.com/_shriiiyanshh_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://wa.me/918878892701" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+
+  <div class="footer-terminal">
+    <span>&gt;</span> portfolio.build(status: <b>"READY_FOR_OPPORTUNITIES"</b>);
+  </div>
+
+  <p class="footer-copy">
+    © 2026 Shriyansh Sharma | Crafted with Express, EJS & Creativity
+  </p>
+</footer>
+</main>
+
+<script src="/javascripts/main.js"></script>
+</body>
+</html>

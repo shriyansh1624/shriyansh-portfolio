@@ -1,0 +1,28 @@
+{
+  "name": "shriyansh-portfolio",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "axios": "^1.18.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^17.4.2",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-rate-limit": "^8.5.2",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.2",
+    "gsap": "^3.15.0",
+    "helmet": "^8.2.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^9.7.4",
+    "morgan": "~1.9.1",
+    "nodemailer": "^9.0.3",
+    "nodemon": "^3.1.14",
+    "typed.js": "^3.0.0"
+  }
+}

@@ -14,6 +14,80 @@
 </head>
 
 <body>
+  <!-- ================= CHATBOT ================= -->
+
+<div id="chatbot">
+
+    <button id="chatToggle">
+        <i class="fa-solid fa-robot"></i>
+    </button>
+
+    <div id="chatWindow">
+
+        <div class="chat-header">
+
+            <div>
+
+                <h3>SHRIYANSH AI</h3>
+
+                <small>System Online</small>
+
+            </div>
+
+            <button id="closeChat">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div id="chatBody">
+
+        </div>
+
+        <div class="quick-buttons">
+
+            <button data-msg="about">About</button>
+
+            <button data-msg="skills">Skills</button>
+
+            <button data-msg="projects">Projects</button>
+
+            <button data-msg="resume">Resume</button>
+
+            <button data-msg="contact">Contact</button>
+
+        </div>
+
+        <div class="typing" id="typing">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="chat-input">
+
+            <input
+                id="chatInput"
+                placeholder="Ask something..."
+            >
+
+            <button id="sendChat">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="/css/chatbot.css">
+
+<script src="/javascripts/chatbot.js"></script>
 
 <!-- PAGE 1: TERMINAL LOADER -->
 <section class="boot-screen" id="bootScreen">
@@ -254,7 +328,7 @@
 
     </a>
 
-    <a href="https://gyanjyoti.onrender.com"
+    <a href="https://gyan-jyoti-school-website.onrender.com"
        target="_blank"
        class="demo-btn">
 

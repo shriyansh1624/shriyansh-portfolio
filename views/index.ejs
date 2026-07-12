@@ -14,69 +14,142 @@
 </head>
 
 <body>
-  <!-- ================= CHATBOT ================= -->
+
+<!-- ====================== AI CHATBOT ====================== -->
+
+<!-- ====================== AI CHATBOT ====================== -->
 
 <div id="chatbot">
 
-    <button id="chatToggle">
+    <!-- Floating Button -->
+    <button id="chatToggle" type="button" aria-label="Open AI Assistant">
         <i class="fa-solid fa-robot"></i>
     </button>
 
+    <!-- Chat Window -->
     <div id="chatWindow">
 
+        <!-- Header -->
         <div class="chat-header">
 
-            <div>
+            <div class="chat-title">
 
-                <h3>SHRIYANSH AI</h3>
+                <h3>
+                    <i class="fa-solid fa-robot"></i>
+                    SHRIYANSH AI
+                </h3>
 
-                <small>System Online</small>
+                <small class="status">
+                    <span class="status-dot"></span>
+                    Online • Portfolio Assistant
+                </small>
 
             </div>
 
-            <button id="closeChat">
+            <button id="closeChat" type="button" aria-label="Close Chat">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
         </div>
 
+        <!-- Chat Messages -->
         <div id="chatBody">
 
+            <div class="bot-message welcome">
+
+                <h4>👋 Welcome to Shriyansh AI</h4>
+
+                <p>
+                    I'm your AI portfolio assistant.
+                </p>
+
+                <p>
+                    I can help you with:
+                </p>
+
+                <ul>
+                    <li>💻 Technical Skills</li>
+                    <li>🚀 Projects</li>
+                    <li>💼 Experience</li>
+                    <li>🏆 Certifications</li>
+                    <li>🎓 Education</li>
+                    <li>📄 Resume</li>
+                    <li>📞 Contact Information</li>
+                </ul>
+
+                <p><strong>Try asking:</strong></p>
+
+                <p>• Tell me about Shriyansh</p>
+                <p>• What Java projects has he built?</p>
+                <p>• What technologies does he know?</p>
+                <p>• Is he available for internships?</p>
+
+            </div>
+
         </div>
+
+        <!-- Quick Actions -->
 
         <div class="quick-buttons">
 
-            <button data-msg="about">About</button>
+            <button type="button" data-action="about">
+                👤 About
+            </button>
 
-            <button data-msg="skills">Skills</button>
+            <button type="button" data-action="skills">
+                💻 Skills
+            </button>
 
-            <button data-msg="projects">Projects</button>
+            <button type="button" data-action="projects">
+                🚀 Projects
+            </button>
 
-            <button data-msg="resume">Resume</button>
+            <button type="button" data-action="experience">
+                💼 Experience
+            </button>
 
-            <button data-msg="contact">Contact</button>
+            <button type="button" data-action="certifications">
+                🏆 Certificates
+            </button>
+
+            <button type="button" data-action="resume">
+                📄 Resume
+            </button>
+
+            <button type="button" data-action="contact">
+                📞 Contact
+            </button>
 
         </div>
 
-        <div class="typing" id="typing">
+        <!-- Typing Indicator -->
+
+        <div class="typing" id="typing" style="display:none;">
 
             <span></span>
             <span></span>
             <span></span>
 
         </div>
+
+        <!-- Chat Input -->
 
         <div class="chat-input">
 
             <input
+                type="text"
                 id="chatInput"
-                placeholder="Ask something..."
+                placeholder="Ask me anything about Shriyansh..."
+                autocomplete="off"
+                aria-label="Chat Message"
             >
 
-            <button id="sendChat">
-
+            <button
+                id="sendChat"
+                type="button"
+                aria-label="Send Message"
+            >
                 <i class="fa-solid fa-paper-plane"></i>
-
             </button>
 
         </div>
@@ -85,8 +158,7 @@
 
 </div>
 
-<link rel="stylesheet" href="/css/chatbot.css">
-
+<link rel="stylesheet" href="/stylesheets/chatbot.css">
 <script src="/javascripts/chatbot.js"></script>
 
 <!-- PAGE 1: TERMINAL LOADER -->

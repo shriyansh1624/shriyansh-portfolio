@@ -5,11 +5,13 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const helmet = require("helmet");
 const dns = require("dns");
+const session = require("express-session");
 
 require("dotenv").config();
 
 const connectDB = require("./config/db");
 
+const aiRoutes = require("./routes/ai");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const contactRouter = require("./routes/contact");
@@ -18,128 +20,136 @@ dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 const app = express();
 
-/*
- * Required behind Render or another reverse proxy so rate limiting
- * receives the visitor's correct IP.
- */
 if (process.env.NODE_ENV === "production") {
-  app.set("trust proxy", 1);
+    app.set("trust proxy", 1);
 }
 
 connectDB();
 
-/* View engine */
+/* View Engine */
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-/*
- * Helmet CSP is configured for your Font Awesome CDN.
- * Add other trusted CDN domains here later when necessary.
- */
+/* Security */
 app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
+    helmet({
+        contentSecurityPolicy: {
+            directives: {
+                defaultSrc: ["'self'"],
 
-        scriptSrc: [
-          "'self'",
-          "https://cdnjs.cloudflare.com"
-        ],
+                scriptSrc: [
+                    "'self'",
+                    "https://cdnjs.cloudflare.com"
+                ],
 
-        styleSrc: [
-          "'self'",
-          "'unsafe-inline'",
-          "https://cdnjs.cloudflare.com",
-          "https://fonts.googleapis.com"
-        ],
+                styleSrc: [
+                    "'self'",
+                    "'unsafe-inline'",
+                    "https://cdnjs.cloudflare.com",
+                    "https://fonts.googleapis.com"
+                ],
 
-        fontSrc: [
-          "'self'",
-          "data:",
-          "https://cdnjs.cloudflare.com",
-          "https://fonts.gstatic.com"
-        ],
+                fontSrc: [
+                    "'self'",
+                    "data:",
+                    "https://cdnjs.cloudflare.com",
+                    "https://fonts.gstatic.com"
+                ],
 
-        imgSrc: [
-          "'self'",
-          "data:",
-          "blob:",
-          "https:"
-        ],
+                imgSrc: [
+                    "'self'",
+                    "data:",
+                    "blob:",
+                    "https:"
+                ],
 
-        connectSrc: ["'self'"],
+                connectSrc: ["'self'"],
 
-        objectSrc: ["'none'"],
+                objectSrc: ["'none'"],
 
-        baseUri: ["'self'"],
+                baseUri: ["'self'"],
 
-        formAction: ["'self'"]
-      }
-    },
+                formAction: ["'self'"]
+            }
+        },
 
-    /*
-     * HTTPS-only production environment me HSTS useful hai.
-     * Localhost development me disable rakha gaya hai.
-     */
-    strictTransportSecurity:
-      process.env.NODE_ENV === "production"
-        ? undefined
-        : false
-  })
+        strictTransportSecurity:
+            process.env.NODE_ENV === "production"
+                ? undefined
+                : false
+    })
 );
 
+/* Logger */
 app.use(logger("dev"));
 
-/*
- * Limit request body size to reduce oversized-payload abuse.
- */
+/* Body Parser */
 app.use(express.json({ limit: "20kb" }));
 
-app.use(
-  express.urlencoded({
+app.use(express.urlencoded({
     extended: false,
     limit: "20kb",
     parameterLimit: 30
-  })
-);
+}));
 
+/* Cookies */
 app.use(cookieParser());
 
+/* Session */
 app.use(
-  express.static(path.join(__dirname, "public"), {
-    maxAge:
-      process.env.NODE_ENV === "production"
-        ? "7d"
-        : 0,
-    etag: true
-  })
+    session({
+        name: "shriyansh.sid",
+        secret: process.env.SESSION_SECRET || "shriyansh_ai_secret",
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 1000 * 60 * 30,
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax"
+        }
+    })
+);
+
+/* Static Files */
+app.use(
+    express.static(path.join(__dirname, "public"), {
+        maxAge:
+            process.env.NODE_ENV === "production"
+                ? "7d"
+                : 0,
+        etag: true
+    })
 );
 
 /* Routes */
+app.use("/api", aiRoutes);
 app.use("/contact", contactRouter);
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
-/* 404 handler */
+/* 404 */
 app.use((req, res, next) => {
-  next(createError(404));
+    next(createError(404));
 });
 
-/* Central error handler */
+/* Error Handler */
 app.use((err, req, res, next) => {
-  console.error("Application error:", err);
 
-  res.locals.message = err.message;
-  res.locals.error =
-    req.app.get("env") === "development"
-      ? err
-      : {};
+    console.error(err);
 
-  res.status(err.status || 500);
-  res.render("error", {
-    title: "Something Went Wrong"
-  });
+    res.locals.message = err.message;
+    res.locals.error =
+        req.app.get("env") === "development"
+            ? err
+            : {};
+
+    res.status(err.status || 500);
+
+    res.render("error", {
+        title: "Something Went Wrong"
+    });
+
 });
 
 module.exports = app;
